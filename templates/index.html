@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head %} {% endblock %}
+
+
+{% block main_content %}
+    <main>
+        <h1> Welcome to Biobyte! </h1>
+        <h2> Choose your Course! </h2>
+        <ul>
+            <li><a href="{{url_for('plant_page')}}"> Plant Structure </a></li>
+            <li><a href="{{url_for('cell_page')}}"> Cells </a></li>
+            <li><a href="{{url_for('zoology_page')}}"> Zoology </a></li>
+        </ul>
+        <h2> About Biobyte </h1>
+        <p> 
+        Biobyte is a biology centered interactive learning platform designed to help students 
+        learn biology in a fun way through articles, quizzes and interactive content, all on a 
+        fun, pixel-art theme!
+        </p>
+        
+    </main>
+{% endblock %}

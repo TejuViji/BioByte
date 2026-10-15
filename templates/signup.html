@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block head %} 
+<meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
+{% block main_content %}
+<main>
+    <section class = "signup-section">
+        <h2> Signup! </h1>
+        <form method = "POST" action = "url_for('signup_page')">
+            <label for = "username"> Username: </label>
+            <input type = "text" name = "username" id = "username" required>
+            <label for = "password"> Password: </label>
+            <input type = "password" name = "password" id = "password" required></input>
+            <label for = "confirm_password"> Confirm Password: </label>
+            <input type = "password" name = "confirm_password" id = "confirm_password" required></input>
+            <input type = "submit" value = "Signup">
+            {% if error %}
+                <p class = "error-message"> {{ error }} </p>
+            {% endif %}
+            {% if username %}
+                <p class = "success-message"> Welcome, {{ username }}! </p>
+            {% endif %}
+
+        </form>
+    </section>
+</main>
+{% endblock %}

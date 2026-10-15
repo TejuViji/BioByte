@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block head %}
+<meta name="robots" content = "noindex, nofollow">
+{% endblock %}
+
+{% block main_content %}
+    <main>
+        <section class = "login-section">
+            <h2> Login! </h2>
+            <form method = "POST" action = "{{ url_for('login_page') }}">
+                <label for = "username"> Username: </label>
+                <input type = "text" name = "username" id = "username" required>
+                <label for = "password"> Password: </label>
+                <input type = "password"  name = "password" id = "password" required>
+                <input type = "submit" value = "Login">
+                {% if error %}
+                    <p class = "error-message"> {{ error }} </p>
+                {% endif %}
+                {% if username %}
+                    <p class = "success-message"> Welcome, {{ username }}! </p>
+                {% endif %} 
+
+            </form>
+        </section>
+
+
+    </main>
+{% endblock %}
