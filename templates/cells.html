@@ -1,0 +1,18 @@
+{% extends base.html %}
+
+{% block head %} {% endblock %}
+
+{% block main_content %}
+    <main>
+        <h1> Cell Articles </h1>
+        <section class = "box_buttons">
+            <ul>
+                <li><a href="{{url_for('cell_article_4')}}"> Intro to Cells</a></li>
+                <li><a href="{{url_for('cell_article_1')}}"> Cell Structure </a></li>
+                <li><a href="{{url_for('cell_article_2')}}"> DNA and RNA </a></li>
+                <li><a href="{{url_for('cell_article_3')}}"> Meiosis and Mitosis </a></li>
+                <li><a href="{{url_for('cell_article_5')}}"> Cellular Repiration </a></li>
+            </ul>
+        </section>
+    </main>
+{% endblock %}

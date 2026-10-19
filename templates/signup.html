@@ -9,13 +9,13 @@
     <section class = "signup-section">
         <h2> Signup! </h1>
         <form method = "POST" action = "url_for('signup_page')">
-            <label for = "username"> Username: </label>
+            <label for = "username" style="padding:10px 20px; border:3px solid #03170b; color:#edeee5"> Username: </label>
             <input type = "text" name = "username" id = "username" required>
-            <label for = "password"> Password: </label>
+            <label for = "password" class = "label" style="padding:10px 20px; border:3px solid #03170b; color:#edeee5"> Password: </label>
             <input type = "password" name = "password" id = "password" required></input>
-            <label for = "confirm_password"> Confirm Password: </label>
+            <label for = "confirm_password" class = "label" style="padding:10px 20px; border:3px solid #03170b; color:#edeee5"> Confirm Password: </label>
             <input type = "password" name = "confirm_password" id = "confirm_password" required></input>
-            <input type = "submit" value = "Signup">
+            <input type = "submit" value = "Signup" class = "submit_button">
             {% if error %}
                 <p class = "error-message"> {{ error }} </p>
             {% endif %}

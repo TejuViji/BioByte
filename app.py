@@ -96,18 +96,12 @@ def cell_page():
 def zoology_page():
     return render_template("zoology.html")
 
-@app.route("/profile")
-
-def profile_page():
-    return render_template("profile.html")
-
 @app.route("/dashboard")
 def dashboard_page():
     if "username" in session:
-        username = session["username"]
-        return redirect(url_for(login_page))
+        return render_template("dashboard.html", username=session["username"], completed_articles=session["completed_articles"] if "completed_articles" in session else [])
     elif "username" not in session:
-        return render_template("login.html")
+        return redirect(render_template("login.html"))
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -6,7 +6,8 @@
     <meta name = "description" content = "Biobyte is a biology centered interactive learning platform designed to help students learn biology in a fun way through articles, quizzes and interactive content, all on a fun, pixel-art theme.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <style>
       /* Internal CSS goes here */
       body {
@@ -17,24 +18,28 @@
         font-family: 'Press Start 2P', monospace;
         color: #000000;
       }
+      .submit_button {
+        font-family: 'Press Start 2P', monospace;
+        color: #000000;
+        background-color: #24b521
+      }
     </style>
     {% block head %} {% endblock %}
 </head>
 
 <body>
-    <nav name="main-nav" class="nav-bar">
-        <li>
-            <h2 class = "logo"> <a href="{{url_for('landing_page')}}"> Biobyte </a></h2>
-            <h3 class = "nav-text"><a href="{{url_for('plant_page')}}">Plant Articles</a></h3>
-            <h3 class = "nav-text"><a href="{{url_for('cell_page')}}">Cell Articles</a></h3>
-            <h3 class = "nav-text"><a href="{{url_for('zoology_page')}}">Zoology Articles</a></h3>
+    <nav aria-label="Main navigation" class="nav-bar">
+        <ul>
+            <li class="nav-brand"><a href="{{url_for('landing_page')}}">Biobyte</a></li>
+            <li class="nav-item"><a href="{{url_for('plant_page')}}">Plant Articles</a></li>
+            <li class="nav-item"><a href="{{url_for('cell_page')}}">Cell Articles</a></li>
+            <li class="nav-item"><a href="{{url_for('zoology_page')}}">Zoology Articles</a></li>
             {% if session.get('username') %}
-                <h3 class = "nav-text"><a href="{{url_for('profile_page')}}">Profile</a></h3>
+                <li class="nav-item"><a href="{{url_for('profile_page')}}">Profile</a></li>
             {% else %}
-                <h3 class = "nav-text"><a href="{{url_for('login_page')}}">Login/Signup</a></h3>
+                <li class="nav-item"><a href="{{url_for('login_page')}}">Login/Signup</a></li>
             {% endif %}
-        </li>
-
+        </ul>
     </nav>
     {% block main_content %} 
     

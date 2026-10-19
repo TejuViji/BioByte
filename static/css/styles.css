@@ -1,0 +1,100 @@
+
+
+
+li, p {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 2px solid #174c2a;
+  font-family: "Space Mono", sans-serif;
+  color: #000000;
+}
+
+nav.nav-bar {
+  background: #b8ef5a;
+  border: 3px solid #174c2a;
+  border-bottom-width: 6px;
+  box-shadow: 4px 4px 0 #174c2a;
+  margin: 0 0 1.5rem;
+  padding: 0.45rem 0.75rem;
+}
+
+.nav-bar ul {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-brand {
+  margin-right: auto;
+}
+
+.nav-brand a {
+  color: #123d24;
+  display: block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(0.8rem, 2vw, 1.05rem);
+  line-height: 1.5;
+  padding: 0.6rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-item a {
+  border: 2px solid transparent;
+  color: #174c2a;
+  display: block;
+  font-family: 'Press Start 2P', 'VT323', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 0.6rem 0.75rem;
+  text-decoration: none;
+  transition: background-color 120ms ease, color 120ms ease, transform 120ms ease;
+}
+
+.nav-item a:hover,
+.nav-item a:focus-visible {
+  background: #174c2a;
+  border-color: #123d24;
+  color: #f2ffb8;
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.nav-brand a:focus-visible {
+  outline: 3px dashed #174c2a;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  nav.nav-bar {
+    padding: 0.4rem;
+  }
+
+  .nav-bar ul {
+    gap: 0.25rem;
+  }
+
+  .nav-brand {
+    flex-basis: 100%;
+  }
+
+  .nav-brand a {
+    padding: 0.5rem;
+  }
+
+  .nav-item a {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-item a {
+    transition: none;
+  }
+}

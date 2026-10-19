@@ -1,0 +1,19 @@
+{% extends base.html %}
+
+{% block head %} {% endblock %}
+
+{% block main_content %}
+    <main>
+        <h1> Plant Articles </h1>
+        <section class = "box_buttons">
+            <ul>
+                <li><a href="{{url_for('plant_article_4')}}"> Intro to Plants</a></li>
+                <li><a href="{{url_for('plant_article_1')}}"> Plant Structure </a></li>
+                <li><a href="{{url_for('plant_article_2')}}"> Photosynthesis </a></li>
+                <li><a href="{{url_for('plant_article_3')}}"> Plant Reproduction </a></li>
+            </ul>
+
+        </section>
+        
+    </main>
+{% endblock %}

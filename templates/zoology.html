@@ -1,0 +1,20 @@
+{% extends base.html %}
+
+{% block head %} {% endblock %}
+
+{% block main_content %}
+    <main>
+        <h1> Ecology Articles </h1>
+        <section class = "box_buttons">
+            <ul>
+                <li><a href="{{url_for('ecology_article_4')}}"> Intro to Ecology</a></li>
+                <li><a href="{{url_for('ecology_article_1')}}"> The Food Chain and Web </a></li>
+                <li><a href="{{url_for('ecology_article_5')}}"> Evolution </a></li>
+                <li><a href="{{url_for('ecology_article_2')}}"> Taxonomy </a></li>
+                <li><a href="{{url_for('ecology_article_3')}}"> Origin of Life </a></li>
+            </ul>
+
+        </section>
+        
+    </main>
+{% endblock %}

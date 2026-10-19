@@ -13,7 +13,7 @@
                 <input type = "text" name = "username" id = "username" required>
                 <label for = "password"> Password: </label>
                 <input type = "password"  name = "password" id = "password" required>
-                <input type = "submit" value = "Login">
+                <input type = "submit" value = "Login" class = "submit_button">
                 {% if error %}
                     <p class = "error-message"> {{ error }} </p>
                 {% endif %}
@@ -22,6 +22,7 @@
                 {% endif %} 
 
             </form>
+            <h4 class = "login-section" > Don't have an account? Click <a href="{{url_for('signup_page')}}">here</a></h4>
         </section>
 
 

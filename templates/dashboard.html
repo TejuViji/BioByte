@@ -1,1 +1,24 @@
 {% extends base.html %}
+
+{% meta name="robots" content="noindex, nofollow" %}
+
+{% block main_content %}
+    <main>
+        <h1> Dashboard </h1>
+        <section class = "dashboard-section">
+            <h2> Welcome, {{ username }}! </h2>
+            <h3> Completed Articles: </h3>
+            {% if "completed_articles" in session %}
+                <ul>
+                    {% for article in completed_articles %}
+                        <li style = "color: #80EF80">{{ article }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p> You haven't completed any articles yet. Start learning now! </p>
+            {% endif %}
+        </section>
+    </main>
+{% endblock %}
+
+{% main %}
