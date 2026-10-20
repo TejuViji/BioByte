@@ -1,12 +1,45 @@
 
+body {
+  background-image:
+    url("../images/green-sprite.png"),
+    url("../images/red-sprite.png");
+  background-position: 32px 32px, 96px 96px;
+  background-repeat: repeat;
+  background-size: 128px 128px;
+  image-rendering: pixelated;
+}
 
-
-li, p {
+main li, main p {
   margin: 0.5rem 0;
   padding: 0.5rem;
   border: 2px solid #174c2a;
   font-family: "Space Mono", sans-serif;
   color: #000000;
+}
+
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6,
+main p,
+main li,
+main label,
+main input,
+main input[type="submit"],
+main textarea,
+main select,
+main button {
+  background-color: #f7f6e8;
+  border: 3px solid #174c2a;
+  border-bottom-width: 6px;
+  box-shadow: 4px 4px 0 #174c2a;
+  padding: 0.75rem;
+}
+
+main input[type="submit"] {
+  background-color: #24b521;
 }
 
 nav.nav-bar {
@@ -32,8 +65,22 @@ nav.nav-bar {
   margin-right: auto;
 }
 
+.nav-bar li {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-brand > a,
+.nav-item a {
+  background-color: #f7f6e8;
+  border: 3px solid #174c2a;
+  border-bottom-width: 6px;
+  box-shadow: 4px 4px 0 #174c2a;
+}
+
 .nav-brand a {
-  color: #123d24;
+  color: #000000;
   display: block;
   font-family: 'Press Start 2P', monospace;
   font-size: clamp(0.8rem, 2vw, 1.05rem);
@@ -42,9 +89,13 @@ nav.nav-bar {
   text-decoration: none;
   text-transform: uppercase;
 }
+.nav-bar .nav-brand > a > .brand_bio {
+  color: #008531;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1.1em;
+}
 
 .nav-item a {
-  border: 2px solid transparent;
   color: #174c2a;
   display: block;
   font-family: 'Press Start 2P', 'VT323', sans-serif;

@@ -55,20 +55,20 @@ def login_page():
 @app.route("/signup", methods=["GET", "POST"])
 def signup_page():
     if request.method == "GET":
-        return render_template("signup_page.html")
+        return render_template("signup.html")
     if request.method == "POST":
         username = request.form.get("username").strip()
         password = request.form.get("password").strip()
         if password.len() < 8:
-            return render_template("signup_page.html", error="Password must be at least 8 characters long")
+            return render_template("signup.html", error="Password must be at least 8 characters long")
         elif password != request.form.get("confirm_password").strip():
-            return render_template("signup_page.html", error="Passwords do not match")
+            return render_template("signup.html", error="Passwords do not match")
         elif not re.search(r'[^A-Za-z0-9]', password):
-            return render_template("signup_page.html", error="Password must contain at least one special character")
+            return render_template("signup.html", error="Password must contain at least one special character")
         elif not re.search(r"\d+", password):
-            return render_template("signup_page.html", error="Password must contain at least one number")
+            return render_template("signup.html", error="Password must contain at least one number")
         if username in load_data():
-            return render_template("signup_page.html", error="Username taken")
+            return render_template("signup.html", error="Username taken")
         elif username not in load_data():
             users = load_data()
             users[username] = password
@@ -76,8 +76,8 @@ def signup_page():
                 with open("users.json", "w") as file:
                     json.dump(users, file, indent = 4, ensure_ascii=False)
             except IOError:
-                return render_template("signup_page.html", error="Error saving user data")
-            return render_template("login.html", message="Signup Successful")
+                return render_template("signup.html", error="Error saving user data")
+            return redirect(url_for('dashboard'), message="Signup Successful")
 
 #placeholders below for planned routes
 
@@ -101,7 +101,7 @@ def dashboard_page():
     if "username" in session:
         return render_template("dashboard.html", username=session["username"], completed_articles=session["completed_articles"] if "completed_articles" in session else [])
     elif "username" not in session:
-        return redirect(render_template("login.html"))
+        return redirect(url_for("login_page"))
 
 if __name__ == "__main__":
     app.run(debug=True)

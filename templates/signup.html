@@ -9,11 +9,11 @@
     <section class = "signup-section">
         <h2> Signup! </h1>
         <form method = "POST" action = "url_for('signup_page')">
-            <label for = "username" style="padding:10px 20px; border:3px solid #03170b; color:#edeee5"> Username: </label>
+            <label for = "username"> Username: </label>
             <input type = "text" name = "username" id = "username" required>
-            <label for = "password" class = "label" style="padding:10px 20px; border:3px solid #03170b; color:#edeee5"> Password: </label>
+            <label for = "password" class = "label"> Password: </label>
             <input type = "password" name = "password" id = "password" required></input>
-            <label for = "confirm_password" class = "label" style="padding:10px 20px; border:3px solid #03170b; color:#edeee5"> Confirm Password: </label>
+            <label for = "confirm_password" class = "label"> Confirm Password: </label>
             <input type = "password" name = "confirm_password" id = "confirm_password" required></input>
             <input type = "submit" value = "Signup" class = "submit_button">
             {% if error %}

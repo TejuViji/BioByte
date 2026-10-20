@@ -30,15 +30,17 @@
 <body>
     <nav aria-label="Main navigation" class="nav-bar">
         <ul>
-            <li class="nav-brand"><a href="{{url_for('landing_page')}}">Biobyte</a></li>
+            <li class="nav-brand"><a href="{{url_for('landing_page')}}"><span class = "brand_bio">Bio</span>byte</a></li>
             <li class="nav-item"><a href="{{url_for('plant_page')}}">Plant Articles</a></li>
             <li class="nav-item"><a href="{{url_for('cell_page')}}">Cell Articles</a></li>
             <li class="nav-item"><a href="{{url_for('zoology_page')}}">Zoology Articles</a></li>
+            <li class="nav-item"><a href="{{url_for('dashboard_page')}}">Dashboard</a></li>
             {% if session.get('username') %}
                 <li class="nav-item"><a href="{{url_for('profile_page')}}">Profile</a></li>
             {% else %}
                 <li class="nav-item"><a href="{{url_for('login_page')}}">Login/Signup</a></li>
             {% endif %}
+            
         </ul>
     </nav>
     {% block main_content %} 
