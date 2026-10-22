@@ -9,11 +9,13 @@
         <section class = "login-section">
             <h2> Login! </h2>
             <form method = "POST" action = "{{ url_for('login_page') }}">
-                <label for = "username"> Username: </label>
+                
+                <label for = "username" style="font-family: Press Start 2p"> Username: </label>
                 <input type = "text" name = "username" id = "username" required>
-                <label for = "password"> Password: </label>
+                <label for = "password" style="font-family: Press Start 2P"> Password: </label>
                 <input type = "password"  name = "password" id = "password" required>
                 <input type = "submit" value = "Login" class = "submit_button">
+                
                 {% if error %}
                     <p class = "error-message"> {{ error }} </p>
                 {% endif %}

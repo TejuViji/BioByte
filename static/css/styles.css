@@ -82,7 +82,7 @@ nav.nav-bar {
 .nav-brand a {
   color: #000000;
   display: block;
-  font-family: 'Press Start 2P', monospace;
+  font-family: 'Press Start 2P', 'VT323' monospace;
   font-size: clamp(0.8rem, 2vw, 1.05rem);
   line-height: 1.5;
   padding: 0.6rem;
