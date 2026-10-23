@@ -21,7 +21,7 @@ app.config["SECRET_KEY"] = os.environ.get("SESSION_KEY")
 def load_data():
     if not os.path.exists("users.json"):
         return {}
-    
+
     try:
         with open(json_file, 'r') as f:
             return json.load(f)
@@ -37,12 +37,12 @@ def landing_page():
 
 
 @app.route("/login", methods =["GET", "POST"])
-def login_page(): 
+def login_page():
     users = load_data()
     if request.method == "GET":
         rendered_template = render_template("login.html")
         return rendered_template
-    
+
     if request.method == "POST":
         username = (request.form.get("username") or "").strip()
         password = (request.form.get("password") or "").strip()
@@ -50,7 +50,7 @@ def login_page():
             return render_template("login.html", error="Invalid username or password")
         elif username in users and users[username] == password:
             session["username"] = username
-            return render_template("dashboard.html", username=username)
+            return redirect(url_for(dashboard_page), username=username)
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup_page():
@@ -102,6 +102,85 @@ def dashboard_page():
         return render_template("dashboard.html", username=session["username"], completed_articles=session["completed_articles"] if "completed_articles" in session else [])
     elif "username" not in session:
         return redirect(url_for("login_page"))
+
+@app.errorhandler(404)
+def page_not_found():
+    return render_template("404.html")
+
+@app.errorhandler(500)
+def internal_server_error():
+    return render_template("500.html")
+
+@app.route("/zoology_article1")
+
+def zoology_article1():
+    return render_template("ecologyintro.html")
+
+@app.route("/zoology_article2")
+
+def zoology_article2():
+    return render_template("foodwebchain.html")
+
+@app.route("/zoology_article3")
+
+def zoology_article3():
+    return render_template("evolution.html")
+
+@app.route("/zoology_article4")
+
+def zoology_article4():
+    return render_template("taxonomy.html")
+
+@app.route("/zoology_article5")
+
+def zoology_article5():
+    return render_template("lifeorigin.html")
+
+@app.route("/cell_article1")
+
+def cell_article1():
+    return render_template("zoology.html")
+
+@app.route("/cell_article2")
+
+def cell_article2():
+    return render_template("zoology.html")
+
+@app.route("/cell_article3")
+
+def cell_article3():
+    return render_template("zoology.html")
+
+@app.route("/cell_article4")
+
+def cell_article4():
+    return render_template("zoology.html")
+
+@app.route("/cell_article5")
+
+def cell_article5():
+    return render_template("zoology.html")
+
+@app.route("/plant_article1")
+
+def plant_article1():
+    return render_template("zoology.html")
+
+@app.route("/plant_article2")
+
+def plant_article2():
+    return render_template("zoology.html")
+
+@app.route("/plant_article3")
+
+def plant_article3():
+    return render_template("zoology.html")
+
+@app.route("/plant_article4")
+
+def plant_article4():
+    return render_template("zoology.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

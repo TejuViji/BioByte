@@ -1,6 +1,12 @@
-{% extends base.html %}
+{% extends "base.html" %}
 
-{% meta name="robots" content="noindex, nofollow" %}
+{% block head %}
+
+
+<meta name="robots" content="noindex, nofollow">
+
+
+{% endblock %}
 
 {% block main_content %}
     <main>
@@ -21,4 +27,3 @@
     </main>
 {% endblock %}
 
-{% main %}

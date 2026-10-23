@@ -1,4 +1,4 @@
-{% extends base.html %}
+{% extends "base.html" %}
 
 {% block head %} {% endblock %}
 
@@ -7,13 +7,13 @@
         <h1> Plant Articles </h1>
         <section class = "box_buttons">
             <ul>
-                <li><a href="{{url_for('plant_article_4')}}"> Intro to Plants</a></li>
-                <li><a href="{{url_for('plant_article_1')}}"> Plant Structure </a></li>
-                <li><a href="{{url_for('plant_article_2')}}"> Photosynthesis </a></li>
-                <li><a href="{{url_for('plant_article_3')}}"> Plant Reproduction </a></li>
+                <li><a href="{{url_for('plant_article1')}}"> Intro to Plants</a></li>
+                <li><a href="{{url_for('plant_article2')}}"> Plant Structure </a></li>
+                <li><a href="{{url_for('plant_article3')}}"> Photosynthesis </a></li>
+                <li><a href="{{url_for('plant_article4')}}"> Plant Reproduction </a></li>
             </ul>
 
         </section>
-        
+
     </main>
 {% endblock %}
